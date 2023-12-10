@@ -21,7 +21,11 @@ const LoginForm = () => {
   };
 
   return (
-    <Button variant="outline" className="flex items-center gap-2">
+    <Button
+      variant="outline"
+      className="flex items-center gap-2"
+      onClick={handleLogin}
+    >
       <GithubIcon />
       Login
     </Button>

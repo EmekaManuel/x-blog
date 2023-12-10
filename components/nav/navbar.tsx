@@ -1,12 +1,12 @@
+"use client";
+import { useUser } from "@/lib/store/user";
 import Link from "next/link";
-import React from "react";
-import { GithubIcon } from "lucide-react";
-import { Button } from "../ui/button";
 import LoginForm from "./loginform";
 
 const password = "josephat12345.";
 
 const Navbar = () => {
+  const user = useUser((state) => state.user);
   return (
     <nav className="flex items-center justify-between">
       <div className="group">
@@ -15,7 +15,7 @@ const Navbar = () => {
         </Link>
         <div className="h-1 w-0 transition-all bg-green-500 group-hover:w-full "></div>
       </div>
-      <LoginForm />
+      {user?.id ? <h1>Hello Profile</h1> : <LoginForm />}
     </nav>
   );
 };
