@@ -2,8 +2,7 @@
 import { useUser } from "@/lib/store/user";
 import Link from "next/link";
 import LoginForm from "./loginform";
-
-const password = "josephat12345.";
+import UserProfile from "./profile";
 
 const Navbar = () => {
   const user = useUser((state) => state.user);
@@ -15,7 +14,7 @@ const Navbar = () => {
         </Link>
         <div className="h-1 w-0 transition-all bg-green-500 group-hover:w-full "></div>
       </div>
-      {user?.id ? <h1>Hello Profile</h1> : <LoginForm />}
+      {user?.id ? <UserProfile /> : <LoginForm />}
     </nav>
   );
 };

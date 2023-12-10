@@ -1,15 +1,11 @@
 "use client";
-import { createBrowserClient } from "@supabase/ssr";
+import { supabase } from "@/lib/supabase";
 import { GithubIcon } from "lucide-react";
-import { Button } from "../ui/button";
 import { usePathname } from "next/navigation";
+import { Button } from "../ui/button";
 
 const LoginForm = () => {
   const pathname = usePathname();
-  const supabase = createBrowserClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-  );
 
   const handleLogin = () => {
     supabase.auth.signInWithOAuth({
