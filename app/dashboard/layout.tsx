@@ -1,4 +1,4 @@
-import NavLinks from "@/components/dashboard-navlinks/navlinks";
+import NavLinks from "@/components/dashboard/navlinks";
 import React from "react";
 
 interface dashboardProps {
